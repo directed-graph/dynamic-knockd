@@ -1,0 +1,10 @@
+
+[Unit]
+Description=Regenerate Knockd Sequence Periodically
+
+[Timer]
+OnCalendar=*:*:0/30
+
+[Install]
+WantedBy=multi-user.target
+

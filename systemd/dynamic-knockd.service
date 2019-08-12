@@ -1,0 +1,12 @@
+
+[Unit]
+Description=Update Port Sequence for Knockd
+After=knockd.service
+Wants=knockd.service
+
+[Service]
+# Environment="PORT_SIG_DIGIT=1"
+# Environment="PROTOCOL=tcp"
+# Environment="SIG_DIGIT_MASK=10000"
+ExecStart=/opt/dynamic-knockd/update.bash
+
