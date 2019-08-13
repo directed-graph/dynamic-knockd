@@ -8,10 +8,10 @@ sequence_repeat=${SEQUENCE_REPEAT:-30}
 
 mkdir -p $(dirname $sequence_file)
 
-systemctl stop knockd.service
 sequence=( $($generator "$@") )
 for ((i = 0; i < $sequence_repeat; ++i)); do
     (IFS=","; echo "${sequence[*]}")
 done >$sequence_file
-systemctl start knockd.service
+
+systemctl kill -s SIGHUP knockd.service
 
