@@ -13,5 +13,8 @@ for ((i = 0; i < $sequence_repeat; ++i)); do
     (IFS=","; echo "${sequence[*]}")
 done >$sequence_file
 
+# SIGHUP to close all doors
 systemctl kill -s SIGHUP knockd.service
+# restart to reopen sequence file
+systemctl restart knockd.service
 
