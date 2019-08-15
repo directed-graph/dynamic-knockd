@@ -1,10 +1,12 @@
 
 [Unit]
 Description=Regenerate Knockd Sequence Periodically
+Requires=dynamic-knockd.service
 
 [Timer]
-OnCalendar=*:*:0/30
+AccuracySec=1sec
+OnCalendar=*-*-* *:*:0/30
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=timers.target
 
