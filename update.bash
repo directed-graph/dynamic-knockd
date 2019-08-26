@@ -3,7 +3,7 @@
 set -e
 
 generator=${GENERATOR:-$(dirname $0)/generators/totp-base32.bash}
-sequence_file=${SEQUENCE_FILE:-/opt/dynamic-knockd/etc/sequence}
+sequence_file=${SEQUENCE_FILE:-$(dirname $0)/etc/sequence}
 sequence_repeat=${SEQUENCE_REPEAT:-30}
 
 mkdir -p $(dirname $sequence_file)
